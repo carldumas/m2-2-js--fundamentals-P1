@@ -27,8 +27,6 @@ const notCode = [
   'beth',
   'family',
 ];
-
-//
 //
 //
 //
@@ -38,49 +36,65 @@ const notCode = [
 // PLEASE NOTE:
 //     this first question is solved for you, as a demonstration
 //     of how this works)
-//
 const mortyNamesArray = grandson.split(' ');
 const numberOfNames = mortyNamesArray.length;
 console.log(`A1) Morty has ${numberOfNames} names`);
-
-//
 //
 //
 //
 // Q2
 // Convert the alternateRicks string to an array, so that each name ("Simple
 // Rick") is an element in that array. Log that array to the console.
-
-//
+const alternateRicksArr = alternateRicks.split(',');
+console.log(alternateRicksArr);
 //
 //
 //
 // Q3
 // How many Ricks have been named in alternateRicks?
 // HINT: There are multiple ways to solve this one. Maybe try a `for` loop!
-
-//
+let ricksQuantity = 0;
+for (let i = 0; i < alternateRicksArr.length; i++ ) {
+  if (alternateRicksArr[i].includes('Rick')) {
+    ricksQuantity = ricksQuantity + 1;
+  };
+};
+console.log(`There are ${ricksQuantity} Rick in the alternateRicks list.`)
 //
 //
 //
 // Q4
 // How many characters are there in rickSaying (without spaces)?
-
+const rickSayingArr = rickSaying.split('');
+let charCountWithoutSpace = 0;
+for (let i = 0; i < rickSayingArr.length; i++) {
+  if (!rickSayingArr[i].includes(' ')) {
+    charCountWithoutSpace  ++;
+  }
+};
+console.log(`There are ${charCountWithoutSpace} characters without spaces`);
 //
 //
 //
 //
 // Q5
-// It turns out, Morty doesn't actually have a middle name. The `grandson`
+// It turns out, Morty doesn't actually have a middle name. The grandson
 // string is wrong! Console Morty's name without "Antoine".
-
+const output = grandson.slice(0, 5) + ' ' + grandson.slice(14);
+console.log(output);
 //
 //
 //
 //
 // Q6
 // Scary Terry is actually not an enemy. Remove him from the list and console only Rick's true enemies.
-
+const enemiesArr = enemies.split(',');
+for (let i = 0; i < enemiesArr.length; i++) {
+  if (enemiesArr[i] == ' Scary Terry') {
+    enemiesArr.splice(i, 1);
+  };
+};
+console.log(enemiesArr);
 //
 //
 //

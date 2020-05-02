@@ -44,6 +44,8 @@ Strings have a bunch of methods and properties that will be immediately useful. 
 // Example
 const sentiment = 'I love programming';
 sentiment.length;
+console.log(sentiment.length);
+// OUTPUT: 18
 ```
 
 ---
@@ -57,6 +59,8 @@ It takes 2 parameters, the value to replace and the new value.
 ```js
 // Example
 const sentiment = 'I love programming';
+console.log(sentiment.replace('programming', 'test'));
+// OUTPUT: I love test
 ```
 
 ---
@@ -70,6 +74,8 @@ const sentiment = 'I love programming';
 ```js
 // Example
 const sentiment = 'I love programming';
+console.log(sentiment.slice(0, 1));
+// OUTPUT: I
 ```
 
 ---
@@ -81,6 +87,8 @@ The `.includes()` method tells us if a string includes another string
 ```js
 // Example
 let sentence = "Let's have a pizza party!";
+console.log(sentence.includes('have'));
+// OUTPUT: true
 ```
 
 ---
@@ -92,6 +100,8 @@ The `.split()` method "split" a string into an array of _substrings_.
 ```js
 // Example
 const truth = 'The greatest teacher, failure is.';
+console.log(truth.split(' '));
+// OUTPUT: [ 'The', 'greatest', 'teacher,', 'failure', 'is.' ]
 ```
 
 ---
@@ -106,6 +116,8 @@ This method returns -1 if the value to search for never occurs.
 // Example
 let yodaSpeak =
   'Fear is the path to the dark side. Fear leads to anger. Anger leads to hate. Hate leads to suffering.';
+console.log(yodaSpeak.indexOf('path'));
+// OUTPUT: 12
 ```
 
 _Why would JavaScript decide to return `-1` instead of some other value? like `0`?_
@@ -120,7 +132,10 @@ Turn an input string into another string
 
 ```js
 const input = 'I am a really long sentence, look how many words I have!';
-
+const myFinalText = "sentence, look how";
+let startIndex = input.indexOf(myFinalText);
+input.slice(startIndex, startIndex + myFinalText.length);
+console.log(input.slice(19, 19 + 18));
 // output: "sentence, look how"
 ```
 
@@ -134,19 +149,24 @@ We'll test the **breakout rooms** feature 😀
 
 ```js
 const input = 'Hi World';
-
+console.log(input.replace('Hi World', 'Hello world!'));
 // output: "Hello world!"
 ```
 
 ```js
 const input = 'I am 23 years old!';
 
+const output = input.replace('23 years ', '');
+// OR
+const output = input.slice(0, 4) + ' ' + input.slice(14);
+
+console.log(output);
 // output: "I am old!"
 ```
 
 ```js
 const input = 'How are you today?';
-
+console.log(input.replace('How', 'how').replace('today', 'yesterday').split(' '));
 // output: ["how", "are", "you", "yesterday?"]
 ```
 

@@ -13,6 +13,10 @@
 // all of the even numbers removed.
 function removeEvens(lst) {
   // lst is an array of strings
+  const evenNum = lst.filter(function(num){
+    return num % 2 !== 0;
+  });
+  return evenNum;
 }
 
 console.log(
